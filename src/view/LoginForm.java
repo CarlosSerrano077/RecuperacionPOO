@@ -1,5 +1,7 @@
 package view;
 
+import controller.LoginController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +13,8 @@ public class LoginForm extends JFrame {
     JButton btnLimpiar;
     JPanel Panel1;
 
+    private LoginController loginController;
+
     public LoginForm() {
         setTitle("Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -19,23 +23,16 @@ public class LoginForm extends JFrame {
         setContentPane(Panel1);
         setVisible(true);
 
+        loginController = new LoginController(this);
+
         btnIngresar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String pass = String.valueOf(txtPassword.getPassword());
-                if (txtCorreo.getText().isEmpty() || pass.isEmpty()) {
-                    JOptionPane.showMessageDialog(null,"Campos Vacios");
-                }
-                else{
-                    JOptionPane.showMessageDialog(null,"Usuario ingresó correctamente");
-                    JFrame frame = new JFrame("Principal");
-                    frame.setContentPane(new PanelPrincipal().PanelPrincipal);
-                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.setSize(600,400);
-                    frame.setLocationRelativeTo(null);
-                    frame.setVisible(true);
+                System.out.println("Botón presionado");
+                if (loginController.validarCredenciales()) {
+                    JOptionPane.showMessageDialog(null, "Usuario ingresó correctamente");
+                    new PanelPrincipal();  // mostrar ventana principal
                     dispose();
-                    SwingUtilities.getWindowAncestor(Panel1).dispose();
                 }
             }
 
@@ -47,5 +44,14 @@ public class LoginForm extends JFrame {
                 txtPassword.setText("");
             }
         });
+    }
+
+    //Getter
+    public String getTxtCorreo() {
+        return txtCorreo.getText();
+    }
+
+    public char[] getTxtPassword() {
+        return txtPassword.getPassword();
     }
 }

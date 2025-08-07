@@ -12,7 +12,14 @@ public class PanelPrincipal extends JFrame{
     private JButton btnEliminar;
     private JButton btnActualizar;
 
-    public PanelPrincipal() {
+    public PanelPrincipal(){
+        setTitle("Login");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(500, 450);
+        setLocationRelativeTo(null);
+        setContentPane(PanelPrincipal);
+        setVisible(true);
+
         btnRegistrar.addActionListener(new ActionListener()
         {
             @Override
