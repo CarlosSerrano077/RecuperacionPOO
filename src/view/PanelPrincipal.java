@@ -42,7 +42,7 @@ public class PanelPrincipal extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame mainframe = new JFrame("Login");
-                mainframe.setContentPane(new PanelPrincipal().PanelPrincipal);
+                mainframe.setContentPane(new LoginForm().Panel1);
                 mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 mainframe.setSize(400, 450);
                 mainframe.setLocationRelativeTo(null);

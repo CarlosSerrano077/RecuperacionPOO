@@ -31,10 +31,10 @@ public class RegisterForm {
         btnSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame mainframe = new JFrame("Login");
-                mainframe.setContentPane(new LoginForm().Panel1);
+                JFrame mainframe = new JFrame("Principal");
+                mainframe.setContentPane(new PanelPrincipal().PanelPrincipal);
                 mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                mainframe.setSize(400, 450);
+                mainframe.setSize(600, 400);
                 mainframe.setLocationRelativeTo(null);
                 mainframe.setVisible(true);
                 SwingUtilities.getWindowAncestor(PanelRegistro).dispose();

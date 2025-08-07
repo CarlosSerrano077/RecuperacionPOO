@@ -31,10 +31,10 @@ public class LoginForm extends JFrame {
                     JFrame frame = new JFrame("Principal");
                     frame.setContentPane(new PanelPrincipal().PanelPrincipal);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.setSize(500,400);
+                    frame.setSize(600,400);
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
-
+                    dispose();
                     SwingUtilities.getWindowAncestor(Panel1).dispose();
                 }
             }
