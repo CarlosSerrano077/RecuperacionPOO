@@ -31,8 +31,15 @@ public class LoginForm extends JFrame {
                 System.out.println("Botón presionado");
                 if (loginController.validarCredenciales()) {
                     JOptionPane.showMessageDialog(null, "Usuario ingresó correctamente");
-                    new PanelPrincipal();  // mostrar ventana principal
+                    JFrame mainframe = new JFrame("Principal");
+                    mainframe.setContentPane(new PanelPrincipal().PanelPrincipal);
+                    mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    mainframe.setSize(600, 600);
+                    mainframe.setLocationRelativeTo(null);
+                    mainframe.setVisible(true);
+                    SwingUtilities.getWindowAncestor(Panel1).dispose();
                     dispose();
+
                 }
             }
 

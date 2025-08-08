@@ -8,9 +8,9 @@ public class Conexion {
 
     //Conexion  a la base de datos
     /** Credenciales para la conexión a la base de datos. */
-    private final String usuario= "usyijmttc8yx7jxp";
-    private final String url= "jdbc:mysql://usyijmttc8yx7jxp:iIJqMfJ13pTdsgOHsnlQ@b6pl6zmmlwf8z3okn24x-mysql.services.clever-cloud.com:3306/b6pl6zmmlwf8z3okn24x";
-    private final String password="iIJqMfJ13pTdsgOHsnlQ";
+    private static final String usuario= "usyijmttc8yx7jxp";
+    private static final String url= "jdbc:mysql://usyijmttc8yx7jxp:iIJqMfJ13pTdsgOHsnlQ@b6pl6zmmlwf8z3okn24x-mysql.services.clever-cloud.com:3306/b6pl6zmmlwf8z3okn24x";
+    private static final String password="iIJqMfJ13pTdsgOHsnlQ";
 
     /**
      * Constructor de la clase. Intenta establecer una conexión para verificar su éxito.
@@ -30,7 +30,7 @@ public class Conexion {
      * @return Un objeto Connection que representa la conexión a la base de datos.
      * @throws SQLException Si ocurre un error de conexión.
      */
-    public Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, usuario, password);
     }
 }

@@ -2,9 +2,12 @@ package model;
 
 public class Usuario {
     private int id;
-    private String nombre;
+    private String usuario;
     private String correo;
     private String clave;
+
+    public Usuario(int id, String nombre, String correo) {
+    }
 
     public int getId() {
         return id;
@@ -14,12 +17,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setUsuario(String nombre) {
+        this.usuario = nombre;
     }
 
     public String getCorreo() {

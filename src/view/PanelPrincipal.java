@@ -1,8 +1,13 @@
 package view;
 
+import controller.UsuarioController;
+import model.Usuario;
+
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class PanelPrincipal extends JFrame{
     JPanel PanelPrincipal;
@@ -20,6 +25,11 @@ public class PanelPrincipal extends JFrame{
         setContentPane(PanelPrincipal);
         setVisible(true);
 
+        initComponents();
+        cargarUsuarios();
+        
+
+
         btnRegistrar.addActionListener(new ActionListener()
         {
             @Override
@@ -36,13 +46,25 @@ public class PanelPrincipal extends JFrame{
         btnActualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                JFrame frame1 = new JFrame("Actualizar");
+                frame1.setContentPane(new ActualizarForm().PanelActualizar);
+                frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame1.setSize(400, 400);
+                frame1.setLocationRelativeTo(null);
+                frame1.setVisible(true);
+                SwingUtilities.getWindowAncestor(PanelPrincipal).dispose();
             }
         });
         btnEliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                JFrame frame1 = new JFrame("Eliminar");
+                frame1.setContentPane(new EliminarForm().PanelEliminar);
+                frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame1.setSize(400, 200);
+                frame1.setLocationRelativeTo(null);
+                frame1.setVisible(true);
+                SwingUtilities.getWindowAncestor(PanelPrincipal).dispose();
             }
         });
         btnSalir.addActionListener(new ActionListener() {
@@ -57,5 +79,20 @@ public class PanelPrincipal extends JFrame{
                 SwingUtilities.getWindowAncestor(PanelPrincipal).dispose();
             }
         });
+    }
+
+    private void initComponents() {
+    }
+
+    public void cargarUsuarios() {
+        UsuarioController uc = new UsuarioController();
+        List<Usuario> usuarios = uc.listarUsuarios();
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(new String[]{"ID", "Usuario", "Correo"});
+
+        for (Usuario u : usuarios) {
+            model.addRow(new Object[]{u.getId(), u.getUsuario(), u.getCorreo()});
+        }
+        table1.setModel(model);
     }
 }

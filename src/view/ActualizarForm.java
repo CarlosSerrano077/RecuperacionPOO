@@ -7,47 +7,35 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RegisterForm extends JFrame{
-    private JTextField txtID;
+public class ActualizarForm extends JFrame{
+    JPanel PanelActualizar;
+    private JTextField txtId;
     private JTextField txtUsuario;
     private JTextField txtCorreo;
-    private JButton btnRegistrar;
+    private JButton btnActualizar;
     private JButton btnSalir;
-    private JButton btnLimpiar;
-    JPanel PanelRegistro;
     private PanelPrincipal panelPrincipal;
 
-    public RegisterForm() {
+    public ActualizarForm() {
 
         this.panelPrincipal = panelPrincipal;
 
-        btnRegistrar.addActionListener(new ActionListener() {
+        btnActualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int id =  Integer.parseInt(txtID.getText());
-                String nombre = txtUsuario.getText();
+                int id = Integer.parseInt(txtId.getText());
+                String usuario = txtUsuario.getText();
                 String correo = txtCorreo.getText();
 
-                Usuario usuario = new Usuario(id, nombre, correo);
+                Usuario user = new Usuario(id, usuario, correo);
                 UsuarioController uc = new UsuarioController();
 
-                if(nombre.isEmpty() || correo.isEmpty() ){
-                    JOptionPane.showMessageDialog(null, "Los campos no pueden estar vacíos.");
-                }
-                else if (uc.insertarUsuario(usuario)) {
-                    JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente.");
+                if (uc.actualizarUsuario(user)) {
+                    JOptionPane.showMessageDialog(null, "Usuario actualizado correctamente.");
                     panelPrincipal.cargarUsuarios();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error al registrar usuario.");
+                    JOptionPane.showMessageDialog(null, "No se pudo actualizar el usuario.");
                 }
-            }
-        });
-        btnLimpiar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                txtID.setText("");
-                txtUsuario.setText("");
-                txtCorreo.setText("");
             }
         });
         btnSalir.addActionListener(new ActionListener() {
@@ -60,7 +48,7 @@ public class RegisterForm extends JFrame{
                 mainframe.setLocationRelativeTo(null);
                 mainframe.setVisible(true);
                 dispose();
-                SwingUtilities.getWindowAncestor(PanelRegistro).dispose();
+                SwingUtilities.getWindowAncestor(PanelActualizar).dispose();
             }
         });
     }

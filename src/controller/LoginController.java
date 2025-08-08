@@ -1,16 +1,17 @@
 package controller;
 
 import model.Conexion;
+import model.Usuario;
 import view.LoginForm;
 import view.PanelPrincipal;
 
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginController {
-    //Atributos
+
     private Conexion conexion;
     private LoginForm login;
 
@@ -55,3 +56,6 @@ public class LoginController {
         }
     }
 }
+
+
+
