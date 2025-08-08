@@ -41,12 +41,12 @@ public class ActualizarForm extends JFrame{
         btnSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame mainframe = new JFrame("Principal");
-                mainframe.setContentPane(new PanelPrincipal().PanelPrincipal);
-                mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                mainframe.setSize(600, 600);
-                mainframe.setLocationRelativeTo(null);
-                mainframe.setVisible(true);
+                JFrame mainframe3 = new JFrame("Principal");
+                mainframe3.setContentPane(new PanelPrincipal().PanelPrincipal);
+                mainframe3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                mainframe3.setSize(600, 600);
+                mainframe3.setLocationRelativeTo(null);
+                mainframe3.setVisible(true);
                 dispose();
                 SwingUtilities.getWindowAncestor(PanelActualizar).dispose();
             }

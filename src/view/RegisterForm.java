@@ -53,12 +53,12 @@ public class RegisterForm extends JFrame{
         btnSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame mainframe = new JFrame("Principal");
-                mainframe.setContentPane(new PanelPrincipal().PanelPrincipal);
-                mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                mainframe.setSize(600, 600);
-                mainframe.setLocationRelativeTo(null);
-                mainframe.setVisible(true);
+                JFrame mainframe2 = new JFrame("Principal");
+                mainframe2.setContentPane(new PanelPrincipal().PanelPrincipal);
+                mainframe2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                mainframe2.setSize(600, 600);
+                mainframe2.setLocationRelativeTo(null);
+                mainframe2.setVisible(true);
                 dispose();
                 SwingUtilities.getWindowAncestor(PanelRegistro).dispose();
             }

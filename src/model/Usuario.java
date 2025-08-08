@@ -7,6 +7,9 @@ public class Usuario {
     private String clave;
 
     public Usuario(int id, String nombre, String correo) {
+        this.id = id;
+        this.usuario = nombre;
+        this.correo = correo;
     }
 
     public int getId() {

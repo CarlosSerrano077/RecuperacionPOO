@@ -37,12 +37,12 @@ public class EliminarForm extends JFrame{
         btnSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame mainframe = new JFrame("Principal");
-                mainframe.setContentPane(new PanelPrincipal().PanelPrincipal);
-                mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                mainframe.setSize(600, 600);
-                mainframe.setLocationRelativeTo(null);
-                mainframe.setVisible(true);
+                JFrame mainframe4 = new JFrame("Principal");
+                mainframe4.setContentPane(new PanelPrincipal().PanelPrincipal);
+                mainframe4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                mainframe4.setSize(600, 600);
+                mainframe4.setLocationRelativeTo(null);
+                mainframe4.setVisible(true);
                 dispose();
                 SwingUtilities.getWindowAncestor(PanelEliminar).dispose();
             }

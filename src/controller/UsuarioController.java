@@ -34,11 +34,13 @@ public class UsuarioController {
     }
 
     public boolean insertarUsuario(Usuario u) {
-        String sql = "INSERT INTO usuarios (nombre, correo) VALUES (?, ?)";
+        String sql = "INSERT INTO `usuarios`(`id`, `nombre`, `correo`, `contraseña`) VALUES (?, ?, ?, ?)";
         try (Connection con = Conexion.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setString(1, u.getUsuario());
-            ps.setString(2, u.getCorreo());
+            ps.setInt(1, u.getId());
+            ps.setString(2, u.getUsuario());
+            ps.setString(3, u.getCorreo());
+            ps.setString(4,"1234");
             return ps.executeUpdate() > 0;
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,13 +49,18 @@ public class UsuarioController {
     }
 
     public boolean actualizarUsuario(Usuario u) {
-        String sql = "UPDATE usuarios SET nombre = ?, correo = ? WHERE id = ?";
+        String sql = "UPDATE usuarios SET nombre = ?, correo = ?, contraseña = ? WHERE id = ?";
+
         try (Connection con = Conexion.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
+
             ps.setString(1, u.getUsuario());
             ps.setString(2, u.getCorreo());
-            ps.setInt(3, u.getId());
+            ps.setString(3, "1234");
+            ps.setInt(4, u.getId());
+
             return ps.executeUpdate() > 0;
+
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -61,7 +68,7 @@ public class UsuarioController {
     }
 
     public boolean eliminarUsuario(int id) {
-        String sql = "DELETE FROM usuarios WHERE id = ?";
+        String sql = "DELETE FROM `usuarios` WHERE id = ?";
         try (Connection con = Conexion.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, id);

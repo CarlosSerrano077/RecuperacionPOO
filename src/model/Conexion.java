@@ -8,9 +8,12 @@ public class Conexion {
 
     //Conexion  a la base de datos
     /** Credenciales para la conexión a la base de datos. */
-    private static final String usuario= "usyijmttc8yx7jxp";
+    /**private static final String usuario= "usyijmttc8yx7jxp";
     private static final String url= "jdbc:mysql://usyijmttc8yx7jxp:iIJqMfJ13pTdsgOHsnlQ@b6pl6zmmlwf8z3okn24x-mysql.services.clever-cloud.com:3306/b6pl6zmmlwf8z3okn24x";
-    private static final String password="iIJqMfJ13pTdsgOHsnlQ";
+    private static final String password="iIJqMfJ13pTdsgOHsnlQ";**/
+    private static final String usuario= "uheiydm8ntsawf58";
+    private static final String url= "jdbc:mysql://uheiydm8ntsawf58:smdor0PT3jvyxrGP6b4O@bawmtjils6zhi4qnyg2p-mysql.services.clever-cloud.com:3306/bawmtjils6zhi4qnyg2p";
+    private static final String password="smdor0PT3jvyxrGP6b4O";
 
     /**
      * Constructor de la clase. Intenta establecer una conexión para verificar su éxito.
