@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RecuperacionPOO:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RecuperacionPOO_jar</output-path>
+    <root id="archive" name="RecuperacionPOO.jar">
+      <element id="module-output" name="RecuperacionPOO" />
+      <element id="extracted-dir" path="$USER_HOME$/OneDrive/Documentos/mysqlconnector/mysql-connector-j-9.4.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
